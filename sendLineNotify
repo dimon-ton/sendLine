@@ -1,0 +1,12 @@
+function sendLineNotify(message) {
+var token = "--------------------------------"; // ***ใส่ token ของกลุ่ม Line ที่ใช้งาน***
+var options = {
+  "method": "post",
+  "payload": "message=" + message,
+  "headers": {
+  "Authorization": "Bearer " + token
+  }
+  };
+
+  UrlFetchApp.fetch("https://notify-api.line.me/api/notify", options);
+}
